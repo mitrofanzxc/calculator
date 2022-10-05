@@ -46,7 +46,7 @@ const CalculatorButtonDelete = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  grid-column: 3/-1;
+  grid-column: 4/5;
   padding: 20px;
   border: none;
   border-radius: 5px;
@@ -77,9 +77,6 @@ const CalculatorButtonEqual = styled.button`
 
 const CalculatorForm = styled.form`
   max-width: 100%;
-`;
-
-const CalculatorInputWrapper = styled.div`
   grid-column: 1/-1;
 `;
 
@@ -101,6 +98,5 @@ export {
   CalculatorButtonDelete,
   CalculatorButtonEqual,
   CalculatorForm,
-  CalculatorInputWrapper,
   CalculatorInput,
 };

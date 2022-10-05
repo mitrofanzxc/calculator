@@ -6,23 +6,22 @@ import {
   CalculatorButtonDelete,
   CalculatorButtonEqual,
   CalculatorForm,
-  CalculatorInputWrapper,
   CalculatorInput,
 } from './styled';
 
 const Calculator: FC = () => {
   return (
     <CalculatorWrapper>
-      <CalculatorInputWrapper>
-        <CalculatorForm>
-          <CalculatorInput type="text" readOnly />
-        </CalculatorForm>
-      </CalculatorInputWrapper>
+      <CalculatorForm>
+        <CalculatorInput type="text" readOnly />
+      </CalculatorForm>
       <CalculatorButtonClean>C</CalculatorButtonClean>
-      <CalculatorButtonDelete>&larr;</CalculatorButtonDelete>
+      <CalculatorButton>&plusmn;</CalculatorButton>
+      <CalculatorButtonDelete>&#8594;</CalculatorButtonDelete>
       <CalculatorButton>+</CalculatorButton>
       <CalculatorButton>-</CalculatorButton>
-      <CalculatorButtonEqual>&times;</CalculatorButtonEqual>
+      <CalculatorButtonEqual>=</CalculatorButtonEqual>
+      <CalculatorButton>&times;</CalculatorButton>
       <CalculatorButton>&divide;</CalculatorButton>
       <CalculatorButton>7</CalculatorButton>
       <CalculatorButton>8</CalculatorButton>
@@ -35,7 +34,6 @@ const Calculator: FC = () => {
       <CalculatorButton>1</CalculatorButton>
       <CalculatorButton>2</CalculatorButton>
       <CalculatorButton>3</CalculatorButton>
-      <CalculatorButton>=</CalculatorButton>
       <CalculatorButtonClean>0</CalculatorButtonClean>
       <CalculatorButton>&sdot;</CalculatorButton>
     </CalculatorWrapper>

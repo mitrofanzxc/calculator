@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { HeaderWrapper, NavWrapper } from './styled';
+import { NavLink } from 'react-router-dom';
+import { ButtonTheme } from '..';
+import { HeaderWrapper, HeaderLogo, NavWrapper } from './styled';
 import { paths } from '../../constants';
 import logo from '../../assets/calculator.svg';
 
@@ -9,12 +10,13 @@ const Header: FC = () => {
 
   return (
     <HeaderWrapper>
-      <Link to={main}>
+      <HeaderLogo to={main}>
         <img src={logo} alt="logo" />
-      </Link>
+      </HeaderLogo>
       <NavWrapper>
         <NavLink to={main}>Home</NavLink>
         <NavLink to="/qwe">Settings</NavLink>
+        <ButtonTheme />
       </NavWrapper>
     </HeaderWrapper>
   );
