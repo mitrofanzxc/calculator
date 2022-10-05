@@ -1,10 +1,19 @@
 import { FC } from 'react';
+import { Routes, Route } from 'react-router';
+import { Layout, Main } from './pages';
+import { paths } from './constants';
+import './App.scss';
 
 const App: FC = () => {
+  const { main, any } = paths;
+
   return (
-    <div>
-      <div>DIV</div>
-    </div>
+    <Routes>
+      <Route path={main} element={<Layout />}>
+        <Route index element={<Main />} />
+        <Route path={any} element={<Main />} />
+      </Route>
+    </Routes>
   );
 };
 
