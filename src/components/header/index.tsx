@@ -16,7 +16,7 @@ const Header: FC = () => {
       </HeaderLogoWrapper>
       <NavWrapper>
         <NavLink to={main}>Home</NavLink>
-        <NavLink to="/qwe">Settings</NavLink>
+        <NavLink to="qwe">Settings</NavLink>
         <ButtonTheme />
       </NavWrapper>
     </HeaderWrapper>

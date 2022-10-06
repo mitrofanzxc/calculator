@@ -1,35 +1,61 @@
-import { FC } from 'react';
+import { FC, useEffect, MouseEvent } from 'react';
+import { useAppSelector, useAppDispatch } from '../../store/hooks';
 import {
-  CalculatorButton,
-  CalculatorButtonClean,
-  CalculatorButtonDelete,
-  CalculatorButtonEqual,
-} from './styled';
+  setInputValue,
+  deleteInputValue,
+  equalInputValue,
+  addToHistory,
+} from '../../store/reducers/calculatorSlice';
+import { calcTotalMiddleware } from '../../utils';
+import { CalculatorButton, CalculatorButtonClean, CalculatorButtonEqual } from './styled';
 
 const Keypad: FC = () => {
+  const { inputValue, history } = useAppSelector(({ calculator }) => calculator);
+  const dispatch = useAppDispatch();
+
+  const handleSetInputValue = (event: MouseEvent<HTMLButtonElement>) => {
+    const target = event.target as HTMLButtonElement;
+    const value = target.textContent as string;
+    dispatch(setInputValue(value));
+  };
+
+  const handleDeleteInputValue = () => {
+    dispatch(deleteInputValue());
+  };
+
+  const handleEqualTotalValue = () => {
+    dispatch(addToHistory(inputValue));
+    dispatch(equalInputValue(calcTotalMiddleware(inputValue).toString()));
+  };
+
+  useEffect(() => {
+    localStorage.setItem('history', JSON.stringify(history));
+  }, [history]);
+
   return (
     <>
-      <CalculatorButtonClean>C</CalculatorButtonClean>
+      <CalculatorButton>AC</CalculatorButton>
+      <CalculatorButton>%</CalculatorButton>
       <CalculatorButton>&plusmn;</CalculatorButton>
-      <CalculatorButtonDelete>&#8594;</CalculatorButtonDelete>
-      <CalculatorButton>+</CalculatorButton>
-      <CalculatorButton>-</CalculatorButton>
-      <CalculatorButtonEqual>=</CalculatorButtonEqual>
-      <CalculatorButton>&times;</CalculatorButton>
-      <CalculatorButton>&divide;</CalculatorButton>
-      <CalculatorButton>7</CalculatorButton>
-      <CalculatorButton>8</CalculatorButton>
-      <CalculatorButton>9</CalculatorButton>
-      <CalculatorButton>&#40;</CalculatorButton>
-      <CalculatorButton>4</CalculatorButton>
-      <CalculatorButton>5</CalculatorButton>
-      <CalculatorButton>6</CalculatorButton>
-      <CalculatorButton>&#41;</CalculatorButton>
-      <CalculatorButton>1</CalculatorButton>
-      <CalculatorButton>2</CalculatorButton>
-      <CalculatorButton>3</CalculatorButton>
-      <CalculatorButtonClean>0</CalculatorButtonClean>
-      <CalculatorButton>&sdot;</CalculatorButton>
+      <CalculatorButton onClick={handleDeleteInputValue}>&#8594;</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>+</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>-</CalculatorButton>
+      <CalculatorButtonEqual onClick={handleEqualTotalValue}>=</CalculatorButtonEqual>
+      <CalculatorButton onClick={handleSetInputValue}>*</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>/</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>7</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>8</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>9</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>&#40;</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>4</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>5</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>6</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>&#41;</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>1</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>2</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>3</CalculatorButton>
+      <CalculatorButtonClean onClick={handleSetInputValue}>0</CalculatorButtonClean>
+      <CalculatorButton onClick={handleSetInputValue}>&sdot;</CalculatorButton>
     </>
   );
 };

@@ -1,11 +1,13 @@
 import { FC } from 'react';
-import { Calculator } from '../../components';
+import { Calculator, History } from '../../components';
+import { MainWrapper } from './styled';
 
 const Main: FC = () => {
   return (
-    <div>
+    <MainWrapper>
       <Calculator />
-    </div>
+      <History />
+    </MainWrapper>
   );
 };
 

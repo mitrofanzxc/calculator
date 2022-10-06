@@ -30,6 +30,24 @@ const GlobalStyles = createGlobalStyle`
 
   .active {
     color: #f44336;
+
+    &::after {
+      content: '';
+      position: relative;
+      top: 3px;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #f44336;
+    }
+  }
+
+  button {
+    transition: all 0.1s linear;
+
+    &:active {
+      transform: translate(2px, 2px);
+    }
   }
 `;
 
