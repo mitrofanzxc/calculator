@@ -14,12 +14,22 @@ const GlobalStyles = createGlobalStyle`
     transition: all 0.1s linear;
   }
 
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.color};
+    transition: all 0.1s linear;
+
+    &:hover {
+      color: #f44336;
+    }
+  }
+
   main {
     padding: 0 20px;
   }
 
   .active {
-    color: red;
+    color: #f44336;
   }
 `;
 

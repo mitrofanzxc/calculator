@@ -5,7 +5,7 @@ import { useAppSelector } from './store/hooks';
 import { Layout, Main, NotFound } from './pages';
 import { paths, lightTheme, darkTheme } from './constants';
 import { GlobalStyles } from './styled';
-import './App.scss';
+import './normalize.scss';
 
 const App: FC = () => {
   const { main, any } = paths;

@@ -8,13 +8,24 @@ const HeaderWrapper = styled.header`
   padding: 20px;
 `;
 
-const HeaderLogo = styled(Link)`
+const HeaderLogoWrapper = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 10px;
+  cursor: pointer;
+
+  h1 {
+    text-transform: uppercase;
+  }
+`;
+
+const HeaderLogo = styled.img`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50px;
   height: 50px;
-  cursor: pointer;
 `;
 
 const NavWrapper = styled.nav`
@@ -22,6 +33,12 @@ const NavWrapper = styled.nav`
   align-items: center;
   justify-content: space-between;
   column-gap: 10px;
+
+  a {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
 `;
 
-export { HeaderWrapper, HeaderLogo, NavWrapper };
+export { HeaderWrapper, HeaderLogoWrapper, HeaderLogo, NavWrapper };
