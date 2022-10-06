@@ -1,3 +1,4 @@
 import { paths } from './paths';
+import { lightTheme, darkTheme } from './themes';
 
-export { paths };
+export { paths, lightTheme, darkTheme };

@@ -1,19 +1,26 @@
 import { FC } from 'react';
 import { Routes, Route } from 'react-router';
+import { ThemeProvider } from 'styled-components';
+import { useAppSelector } from './store/hooks';
 import { Layout, Main } from './pages';
-import { paths } from './constants';
+import { paths, lightTheme, darkTheme } from './constants';
+import { GlobalStyles } from './styled';
 import './App.scss';
 
 const App: FC = () => {
   const { main, any } = paths;
+  const { isLightTheme } = useAppSelector(({ theme }) => theme);
 
   return (
-    <Routes>
-      <Route path={main} element={<Layout />}>
-        <Route index element={<Main />} />
-        <Route path={any} element={<Main />} />
-      </Route>
-    </Routes>
+    <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <Routes>
+        <Route path={main} element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path={any} element={<Main />} />
+        </Route>
+      </Routes>
+    </ThemeProvider>
   );
 };
 

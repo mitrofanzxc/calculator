@@ -13,6 +13,7 @@ const Header: FC = () => {
       <HeaderLogo to={main}>
         <img src={logo} alt="logo" />
       </HeaderLogo>
+      <h1>Calculator</h1>
       <NavWrapper>
         <NavLink to={main}>Home</NavLink>
         <NavLink to="/qwe">Settings</NavLink>

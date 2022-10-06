@@ -5,19 +5,27 @@ interface IInitialState {
   isLightTheme: boolean;
 }
 
+const localStorageIsLightTheme = localStorage.getItem('isLightTheme') || null;
+
 const initialState: IInitialState = {
-  isLightTheme: true,
+  isLightTheme: localStorageIsLightTheme ? JSON.parse(localStorageIsLightTheme) : true,
 };
 
 export const themeSlice = createSlice({
   name: 'theme',
   initialState,
   reducers: {
+    switchLightTheme: (state) => {
+      state.isLightTheme = true;
+    },
+    switchDarkTheme: (state) => {
+      state.isLightTheme = false;
+    },
     switchTheme: (state, action: PayloadAction<boolean>) => {
       state.isLightTheme = action.payload;
     },
   },
 });
 
-export const { switchTheme } = themeSlice.actions;
+export const { switchLightTheme, switchDarkTheme, switchTheme } = themeSlice.actions;
 export default themeSlice.reducer;

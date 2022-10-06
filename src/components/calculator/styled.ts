@@ -22,7 +22,7 @@ const CalculatorButton = styled.button`
   background-color: #f2f2f2;
   font-size: 22px;
   font-weight: 600;
-  color: #000000;
+  color: ${(props) => props.theme.color};
   cursor: pointer;
 `;
 
@@ -38,7 +38,7 @@ const CalculatorButtonClean = styled.button`
   background-color: #f2f2f2;
   font-size: 22px;
   font-weight: 600;
-  color: #000000;
+  color: ${(props) => props.theme.color};
   cursor: pointer;
 `;
 
@@ -54,7 +54,7 @@ const CalculatorButtonDelete = styled.button`
   background-color: #f2f2f2;
   font-size: 22px;
   font-weight: 600;
-  color: #000000;
+  color: ${(props) => props.theme.color};
   cursor: pointer;
 `;
 
@@ -71,7 +71,7 @@ const CalculatorButtonEqual = styled.button`
   background-color: #f2f2f2;
   font-size: 22px;
   font-weight: 600;
-  color: #000000;
+  color: ${(props) => props.theme.color};
   cursor: pointer;
 `;
 
