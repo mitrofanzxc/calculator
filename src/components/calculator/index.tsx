@@ -8,12 +8,18 @@ import {
   CalculatorForm,
   CalculatorInput,
 } from './styled';
+import { digits, signs } from '../../constants';
+import { useAppSelector } from '../../store/hooks';
 
 const Calculator: FC = () => {
+  const { inputValue, firstNumber, secondNumber, sign, isOperationFinish } = useAppSelector(
+    ({ calculator }) => calculator,
+  );
+
   return (
     <CalculatorWrapper>
       <CalculatorForm>
-        <CalculatorInput type="text" readOnly />
+        <CalculatorInput type="text" value={inputValue} readOnly />
       </CalculatorForm>
       <CalculatorButtonClean>C</CalculatorButtonClean>
       <CalculatorButton>&plusmn;</CalculatorButton>
