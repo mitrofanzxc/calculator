@@ -3,7 +3,7 @@ import { ButtonTheme } from './ButtonTheme';
 import { CalculatorFC } from './Calculator/CalculatorFC';
 import { CalculatorCC } from './Calculator/CalculatorCC';
 import { DisplayFC } from './Display/DisplayFC';
-import { DisplayCC } from './Display/DisplayCC';
+import DisplayCC from './Display/DisplayCC';
 import { KeypadFC } from './Keypad/KeypadFC';
 import { KeypadCC } from './Keypad/KeypadCC';
 import { HistoryFC } from './History/HistoryFC';

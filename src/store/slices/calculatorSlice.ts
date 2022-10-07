@@ -2,13 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { getLocalStorage } from '../../utils';
 
-interface IInitialState {
+export interface ICalculatorState {
   inputValue: string;
   isOperationFinish: boolean;
   history: string[];
 }
 
-const initialState: IInitialState = {
+const initialState: ICalculatorState = {
   inputValue: '0',
   isOperationFinish: false,
   history: getLocalStorage('history') ? getLocalStorage('history') : [],

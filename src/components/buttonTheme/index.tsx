@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../../store/hooks';
-import { switchTheme } from '../../store/reducers/themeSlice';
+import { switchTheme } from '../../store/slices/themeSlice';
 import { ButtonThemeWrapper } from './styled';
 import dark from '../../assets/dark.svg';
 import light from '../../assets/light.svg';

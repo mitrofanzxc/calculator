@@ -1,21 +1,28 @@
-import { PureComponent } from 'react';
+import { Component } from 'react';
 import { connect } from 'react-redux';
 import { CalculatorForm, CalculatorInput } from '../styled';
+import { ICalculatorState } from '../../../store/slices/calculatorSlice';
 
-class DisplayCC extends PureComponent {
+interface IDisplayCC {
+  calculator: ICalculatorState;
+}
+
+class DisplayCC extends Component<IDisplayCC> {
   render() {
+    const { inputValue } = this.props.calculator;
+
     return (
       <CalculatorForm>
-        <CalculatorInput type="text" value="" readOnly />
+        <CalculatorInput type="text" value={inputValue} readOnly />
       </CalculatorForm>
     );
   }
 }
 
-export { DisplayCC };
+function mapStateToProps(state) {
+  return {
+    calculator: state.calculator,
+  };
+}
 
-const mapStateToProps = (state) => ({
-  inputValue: state.calculator.inputValue,
-});
-
-export default connect(mapStateToProps, null)(DisplayCC);
+export default connect(mapStateToProps)(DisplayCC);

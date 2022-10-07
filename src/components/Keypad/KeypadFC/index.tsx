@@ -5,7 +5,7 @@ import {
   deleteInputValue,
   equalInputValue,
   addToHistory,
-} from '../../../store/reducers/calculatorSlice';
+} from '../../../store/slices/calculatorSlice';
 import { calcTotalMiddleware } from '../../../utils';
 import { CalculatorButton, CalculatorButtonClean, CalculatorButtonEqual } from '../styled';
 

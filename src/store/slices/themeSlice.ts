@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { getLocalStorage } from '../../utils';
 
-interface IInitialState {
+export interface IThemeState {
   isLightTheme: boolean;
 }
 
-const initialState: IInitialState = {
+const initialState: IThemeState = {
   isLightTheme: getLocalStorage('isLightTheme') ? getLocalStorage('isLightTheme') : true,
 };
 
