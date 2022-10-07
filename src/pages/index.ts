@@ -1,5 +1,7 @@
 import { Layout } from './layout';
-import { Main } from './main';
+import { MainFC } from './main/MainFC';
+import { MainCC } from './main/MainCC';
+import { Settings } from './settings';
 import { NotFound } from './notFound';
 
-export { Layout, Main, NotFound };
+export { Layout, MainFC, MainCC, Settings, NotFound };

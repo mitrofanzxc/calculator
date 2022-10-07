@@ -4,18 +4,12 @@ import { getLocalStorage } from '../../utils';
 
 interface IInitialState {
   inputValue: string;
-  firstNumber: string;
-  secondNumber: string;
-  sign: string;
   isOperationFinish: boolean;
   history: string[];
 }
 
 const initialState: IInitialState = {
   inputValue: '0',
-  firstNumber: '',
-  secondNumber: '',
-  sign: '',
   isOperationFinish: false,
   history: getLocalStorage('history') ? getLocalStorage('history') : [],
 };
@@ -47,9 +41,6 @@ export const calculatorSlice = createSlice({
     },
     resetAllCalculator: (state) => {
       state.inputValue = '0';
-      state.firstNumber = '';
-      state.secondNumber = '';
-      state.sign = '';
       state.isOperationFinish = false;
     },
     addToHistory: (state, action: PayloadAction<string>) => {

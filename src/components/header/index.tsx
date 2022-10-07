@@ -6,17 +6,18 @@ import { paths } from '../../constants';
 import logo from '../../assets/calculator.svg';
 
 const Header: FC = () => {
-  const { main } = paths;
+  const { mainFC, mainCC, settings } = paths;
 
   return (
     <HeaderWrapper>
-      <HeaderLogoWrapper to={main}>
+      <HeaderLogoWrapper to={mainFC}>
         <HeaderLogo src={logo} alt="logo" />
         <h1>Calculator</h1>
       </HeaderLogoWrapper>
       <NavWrapper>
-        <NavLink to={main}>Home</NavLink>
-        <NavLink to="qwe">Settings</NavLink>
+        <NavLink to={mainFC}>Home (FC)</NavLink>
+        <NavLink to={mainCC}>Home (CC)</NavLink>
+        <NavLink to={settings}>Settings</NavLink>
         <ButtonTheme />
       </NavWrapper>
     </HeaderWrapper>

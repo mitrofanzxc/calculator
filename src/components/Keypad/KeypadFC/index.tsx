@@ -1,15 +1,15 @@
 import { FC, useEffect, MouseEvent } from 'react';
-import { useAppSelector, useAppDispatch } from '../../store/hooks';
+import { useAppSelector, useAppDispatch } from '../../../store/hooks';
 import {
   setInputValue,
   deleteInputValue,
   equalInputValue,
   addToHistory,
-} from '../../store/reducers/calculatorSlice';
-import { calcTotalMiddleware } from '../../utils';
-import { CalculatorButton, CalculatorButtonClean, CalculatorButtonEqual } from './styled';
+} from '../../../store/reducers/calculatorSlice';
+import { calcTotalMiddleware } from '../../../utils';
+import { CalculatorButton, CalculatorButtonClean, CalculatorButtonEqual } from '../styled';
 
-const Keypad: FC = () => {
+const KeypadFC: FC = () => {
   const { inputValue, history } = useAppSelector(({ calculator }) => calculator);
   const dispatch = useAppDispatch();
 
@@ -60,4 +60,4 @@ const Keypad: FC = () => {
   );
 };
 
-export { Keypad };
+export { KeypadFC };

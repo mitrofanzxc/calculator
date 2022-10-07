@@ -1,10 +1,14 @@
 interface Ipaths {
-  main: string;
+  mainFC: string;
+  mainCC: string;
+  settings: string;
   any: string;
 }
 
 const paths: Ipaths = {
-  main: '/',
+  mainFC: '/',
+  mainCC: 'maincc',
+  settings: 'settings',
   any: '*',
 };
 
