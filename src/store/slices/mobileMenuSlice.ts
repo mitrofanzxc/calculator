@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
 import { getLocalStorage } from '../../utils';
 
 export interface IMobileMenuState {
@@ -22,8 +21,8 @@ export const mobileMenuSlice = createSlice({
     closeMobileMenu: (state) => {
       state.isMobileMenuOpen = false;
     },
-    toggleMobileMenu: (state, action: PayloadAction<boolean>) => {
-      state.isMobileMenuOpen = action.payload;
+    toggleMobileMenu: (state) => {
+      state.isMobileMenuOpen = !state.isMobileMenuOpen;
     },
   },
 });

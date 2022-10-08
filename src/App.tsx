@@ -2,13 +2,13 @@ import { FC } from 'react';
 import { Routes, Route } from 'react-router';
 import { ThemeProvider } from 'styled-components';
 import { useAppSelector } from './store/hooks';
-import { Layout, MainFC, MainCC, Settings, NotFound } from './pages';
+import { Layout, MainFC, MainCC, SettingsFC, SettingsCC, NotFound } from './pages';
 import { paths, lightTheme, darkTheme } from './constants';
 import { GlobalStyles } from './styled';
 import './normalize.scss';
 
 const App: FC = () => {
-  const { mainFC, mainCC, settings, any } = paths;
+  const { mainFC, mainCC, settingsFC, settingsCC, any } = paths;
   const { isLightTheme } = useAppSelector(({ theme }) => theme);
 
   return (
@@ -18,7 +18,8 @@ const App: FC = () => {
         <Route path={mainFC} element={<Layout />}>
           <Route index element={<MainFC />} />
           <Route path={mainCC} element={<MainCC />} />
-          <Route path={settings} element={<Settings />} />
+          <Route path={settingsFC} element={<SettingsFC />} />
+          <Route path={settingsCC} element={<SettingsCC />} />
           <Route path={any} element={<NotFound />} />
         </Route>
       </Routes>

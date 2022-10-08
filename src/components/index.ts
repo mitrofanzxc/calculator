@@ -1,5 +1,6 @@
 import { Header } from './Header';
-import { ButtonTheme } from './ButtonTheme';
+import { ButtonThemeFC } from './ButtonTheme/ButtonThemeFC';
+import { ButtonBurgerFC } from './ButtonBurger/ButtonBurgerFC';
 import { CalculatorFC } from './Calculator/CalculatorFC';
 import { CalculatorCC } from './Calculator/CalculatorCC';
 import { DisplayFC } from './Display/DisplayFC';
@@ -11,7 +12,8 @@ import HistoryCC from './History/HistoryCC';
 
 export {
   Header,
-  ButtonTheme,
+  ButtonThemeFC,
+  ButtonBurgerFC,
   CalculatorFC,
   CalculatorCC,
   DisplayFC,

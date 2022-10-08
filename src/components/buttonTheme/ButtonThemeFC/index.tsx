@@ -1,11 +1,11 @@
 import { FC, useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '../../store/hooks';
-import { switchTheme } from '../../store/slices/themeSlice';
-import { ButtonThemeWrapper } from './styled';
-import dark from '../../assets/dark.svg';
-import light from '../../assets/light.svg';
+import { useAppSelector, useAppDispatch } from '../../../store/hooks';
+import { switchTheme } from '../../../store/slices/themeSlice';
+import { ButtonThemeWrapper } from '../styled';
+import dark from '../../../assets/dark.svg';
+import light from '../../../assets/light.svg';
 
-const ButtonTheme: FC = () => {
+const ButtonThemeFC: FC = () => {
   const { isLightTheme } = useAppSelector(({ theme }) => theme);
   const dispatch = useAppDispatch();
 
@@ -24,4 +24,4 @@ const ButtonTheme: FC = () => {
   );
 };
 
-export { ButtonTheme };
+export { ButtonThemeFC };

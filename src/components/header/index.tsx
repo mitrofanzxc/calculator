@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ButtonTheme } from '..';
 import { HeaderWrapper, HeaderLogoWrapper, HeaderLogo, NavWrapper } from './styled';
+import { ButtonBurgerFC } from '..';
 import { paths } from '../../constants';
 import logo from '../../assets/calculator.svg';
 
 const Header: FC = () => {
-  const { mainFC, mainCC, settings } = paths;
+  const { mainFC, mainCC, settingsFC, settingsCC } = paths;
 
   return (
     <HeaderWrapper>
@@ -19,8 +19,9 @@ const Header: FC = () => {
           Home (FC)
         </NavLink>
         <NavLink to={mainCC}>Home (CC)</NavLink>
-        <NavLink to={settings}>Settings</NavLink>
-        <ButtonTheme />
+        <NavLink to={settingsFC}>Settings (FC)</NavLink>
+        <NavLink to={settingsCC}>Settings (CC)</NavLink>
+        <ButtonBurgerFC />
       </NavWrapper>
     </HeaderWrapper>
   );

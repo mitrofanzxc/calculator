@@ -42,6 +42,10 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .overflow_hidden {
+    overflow: hidden;
+  }
+
   button {
     transition: all 0.1s linear;
 

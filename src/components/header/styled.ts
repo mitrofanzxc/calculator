@@ -36,8 +36,9 @@ const HeaderLogo = styled.img`
 const NavWrapper = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  column-gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
 
   a {
     font-size: 20px;

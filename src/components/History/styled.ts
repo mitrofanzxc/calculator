@@ -6,6 +6,7 @@ const HistoryWrapper = styled.section`
   flex-direction: column;
   row-gap: 10px;
   max-width: 300px;
+  max-height: 540px;
   padding: 10px;
   border-radius: 5px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
@@ -14,20 +15,16 @@ const HistoryWrapper = styled.section`
   @media (max-width: 768px) {
     width: 100%;
     max-width: 500px;
-    max-height: 540px;
   }
 `;
 
 const HistoryTittle = styled.h2`
-  text-transform: uppercase;
+  width: 100%;
   padding: 10px;
   border-radius: 5px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    text-align: center;
-  }
+  text-align: center;
+  text-transform: uppercase;
 `;
 
 export { HistoryWrapper, HistoryTittle };
