@@ -1,17 +1,32 @@
-import { PureComponent } from 'react';
+import { Component } from 'react';
+import { connect } from 'react-redux';
+import { ICalculatorState } from '../../../store/slices/calculatorSlice';
+import { HistoryWrapper, HistoryTittle } from '../styled';
 
-class HistoryCC extends PureComponent {
+interface IHistoryCC {
+  calculator: ICalculatorState;
+}
+
+class HistoryCC extends Component<IHistoryCC> {
   render() {
+    const { history } = this.props.calculator;
+
     return (
-      <section>
-        <h2>History CC</h2>
-        {/* {history &&
-          history.map((value) => {
-            return <h3 key={JSON.stringify(value)}>{value}</h3>;
-          })} */}
-      </section>
+      <HistoryWrapper>
+        <HistoryTittle>History CC</HistoryTittle>
+        {history &&
+          history.map((value, index) => {
+            return <h3 key={`${JSON.stringify(value) + index}`}>{value}</h3>;
+          })}
+      </HistoryWrapper>
     );
   }
 }
 
-export { HistoryCC };
+function mapStateToProps(state) {
+  return {
+    calculator: state.calculator,
+  };
+}
+
+export default connect(mapStateToProps)(HistoryCC);

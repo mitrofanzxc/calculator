@@ -1,12 +1,13 @@
-import { PureComponent } from 'react';
+import { Component } from 'react';
 import { CalculatorWrapper } from '../styled';
-import DisplayCC from '../../Display/DisplayCC';
+import { DisplayCC, KeypadCC } from '../..';
 
-class CalculatorCC extends PureComponent {
+class CalculatorCC extends Component {
   render() {
     return (
       <CalculatorWrapper>
         <DisplayCC />
+        <KeypadCC />
       </CalculatorWrapper>
     );
   }
