@@ -5,7 +5,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px 20px;
 `;
 
 const HeaderLogoWrapper = styled(Link)`
@@ -16,7 +16,12 @@ const HeaderLogoWrapper = styled(Link)`
   cursor: pointer;
 
   h1 {
+    margin: 0;
     text-transform: uppercase;
+
+    // @media (max-width: 768px) {
+    //   display: none;
+    // }
   }
 `;
 
@@ -38,6 +43,7 @@ const NavWrapper = styled.nav`
     font-size: 20px;
     font-weight: 500;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 `;
 

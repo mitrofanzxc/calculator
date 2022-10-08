@@ -10,6 +10,12 @@ const HistoryWrapper = styled.section`
   border-radius: 5px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   overflow: scroll;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 500px;
+    max-height: 540px;
+  }
 `;
 
 const HistoryTittle = styled.h2`
@@ -17,6 +23,11 @@ const HistoryTittle = styled.h2`
   padding: 10px;
   border-radius: 5px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 export { HistoryWrapper, HistoryTittle };

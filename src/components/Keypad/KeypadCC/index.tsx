@@ -26,6 +26,12 @@ class KeypadCC extends Component<IKeypadCC> {
     this.handleEqualTotalValue = this.handleEqualTotalValue.bind(this);
   }
 
+  componentDidUpdate(prevProps: IKeypadCC) {
+    if (this.props.calculator.history !== prevProps.calculator.history) {
+      localStorage.setItem('history', JSON.stringify(this.props.calculator.history));
+    }
+  }
+
   handleSetInputValue(event: MouseEvent<HTMLButtonElement>) {
     const target = event.target as HTMLButtonElement;
     const value = target.textContent as string;
@@ -42,7 +48,6 @@ class KeypadCC extends Component<IKeypadCC> {
   }
 
   render() {
-    console.log('this', this);
     return (
       <>
         <CalculatorButton>AC</CalculatorButton>

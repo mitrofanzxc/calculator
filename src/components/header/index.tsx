@@ -15,7 +15,9 @@ const Header: FC = () => {
         <h1>Calculator</h1>
       </HeaderLogoWrapper>
       <NavWrapper>
-        <NavLink to={mainFC}>Home (FC)</NavLink>
+        <NavLink to={mainFC} end>
+          Home (FC)
+        </NavLink>
         <NavLink to={mainCC}>Home (CC)</NavLink>
         <NavLink to={settings}>Settings</NavLink>
         <ButtonTheme />
