@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
-import { useAppSelector, useAppDispatch, toggleMobileMenu } from '../../../store';
-import { Burger, BurgerBar, Shadow } from '../styled';
+import { useAppSelector, useAppDispatch, toggleMobileMenu } from '../../store';
+import { Burger, BurgerBar, Shadow } from './styled';
 
 const ButtonBurgerFC: FC = () => {
   const { isMobileMenuOpen } = useAppSelector(({ mobileMenu }) => mobileMenu);

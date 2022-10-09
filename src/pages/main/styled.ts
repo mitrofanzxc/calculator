@@ -6,6 +6,7 @@ const MainWrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  margin-top: 10px;
 `;
 
 export { MainWrapper };

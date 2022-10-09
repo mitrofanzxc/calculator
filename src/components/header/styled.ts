@@ -2,10 +2,16 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const HeaderWrapper = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 1);
+  width: 100%;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  box-shadow: rgb(9 30 66 / 25%) 0px 1px 1px, rgb(9 30 66 / 13%) 0px 0px 1px 1px;
 
   @media (max-width: 480px) {
     padding: 10px 10px;
