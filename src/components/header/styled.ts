@@ -15,9 +15,17 @@ const HeaderLogoWrapper = styled(Link)`
   column-gap: 10px;
   cursor: pointer;
 
+  @media (max-width: 480px) {
+    column-gap: 5px;
+  }
+
   h1 {
     margin: 0;
     text-transform: uppercase;
+
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -27,6 +35,11 @@ const HeaderLogo = styled.img`
   justify-content: center;
   width: 50px;
   height: 50px;
+
+  @media (max-width: 480px) {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 const NavWrapper = styled.nav<{ isMobileMenuOpen: boolean }>`
@@ -51,6 +64,11 @@ const NavWrapper = styled.nav<{ isMobileMenuOpen: boolean }>`
     flex-direction: column;
     gap: 20px;
     background-color: rgba(255, 255, 255, 1);
+  }
+
+  @media (max-width: 480px) {
+    left: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? '20%' : '100%')};
+    width: 80%;
   }
 
   a {
