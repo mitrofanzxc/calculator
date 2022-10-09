@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { useAppSelector, useAppDispatch, toggleMobileMenu } from '../../../store';
 import { Burger, BurgerBar, Shadow } from '../styled';
 
@@ -9,6 +9,10 @@ const ButtonBurgerFC: FC = () => {
   const switcher = () => {
     dispatch(toggleMobileMenu());
   };
+
+  useEffect(() => {
+    localStorage.setItem('isMobileMenuOpen', JSON.stringify(isMobileMenuOpen));
+  }, [isMobileMenuOpen]);
 
   return (
     <>
