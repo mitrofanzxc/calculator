@@ -8,9 +8,9 @@ interface Ipaths {
 
 const paths: Ipaths = {
   mainFC: '/',
-  mainCC: 'maincc',
-  settingsFC: 'settingsFC',
-  settingsCC: 'settingsCC',
+  mainCC: 'main-fc',
+  settingsFC: 'settings-fc',
+  settingsCC: 'settings-cc',
   any: '*',
 };
 
