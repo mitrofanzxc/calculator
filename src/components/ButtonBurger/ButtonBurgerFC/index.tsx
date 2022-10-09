@@ -13,10 +13,10 @@ const ButtonBurgerFC: FC = () => {
 
   return (
     <>
-      <Shadow onClick={switcher} className={`${isMobileMenuOpen ? 'shadow_active' : ''}`} />
-      <Burger onClick={switcher} className={`${isMobileMenuOpen ? 'burger_visible' : ''}`}>
-        <BurgerBar />
-        <BurgerBar />
+      <Shadow onClick={switcher} isMobileMenuOpen={isMobileMenuOpen} />
+      <Burger onClick={switcher}>
+        <BurgerBar isMobileMenuOpen={isMobileMenuOpen} />
+        <BurgerBar isMobileMenuOpen={isMobileMenuOpen} />
       </Burger>
     </>
   );

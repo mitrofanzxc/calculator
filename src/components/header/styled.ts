@@ -18,10 +18,6 @@ const HeaderLogoWrapper = styled(Link)`
   h1 {
     margin: 0;
     text-transform: uppercase;
-
-    // @media (max-width: 768px) {
-    //   display: none;
-    // }
   }
 `;
 
@@ -33,12 +29,29 @@ const HeaderLogo = styled.img`
   height: 50px;
 `;
 
-const NavWrapper = styled.nav`
+const NavWrapper = styled.nav<{ isMobileMenuOpen: boolean }>`
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 10px;
+  transition: all 0.2s linear;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? '50%' : '100%')};
+    z-index: 3;
+    width: 50%;
+    height: 100vh;
+    padding: 80px 10px 10px 40px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 1);
+  }
 
   a {
     font-size: 20px;
