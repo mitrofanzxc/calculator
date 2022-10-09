@@ -10,10 +10,11 @@ import './normalize.scss';
 const App: FC = () => {
   const { mainFC, mainCC, settingsFC, settingsCC, any } = paths;
   const { isLightTheme } = useAppSelector(({ theme }) => theme);
+  const { isMobileMenuOpen } = useAppSelector(({ mobileMenu }) => mobileMenu);
 
   return (
     <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
-      <GlobalStyles />
+      <GlobalStyles isMobileMenuOpen={isMobileMenuOpen} />
       <Routes>
         <Route path={mainFC} element={<Layout />}>
           <Route index element={<MainFC />} />

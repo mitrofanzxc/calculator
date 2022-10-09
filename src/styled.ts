@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyles = createGlobalStyle`
+interface IGlobalStyles {
+  isMobileMenuOpen: boolean;
+}
+
+const GlobalStyles = createGlobalStyle<IGlobalStyles>`
   * {
     margin: 0;
     padding: 0;
@@ -11,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     background-color: ${({ theme }) => theme.bgColor};
     color: ${({ theme }) => theme.color};
+    overflow: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? 'hidden' : '	visible')};
     transition: all 0.1s linear;
   }
 
@@ -29,21 +34,18 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .active {
+    position: relative;
     color: #f44336;
 
     &::after {
       content: '';
-      position: relative;
-      top: 3px;
-      display: block;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
       width: 100%;
       height: 1px;
       background-color: #f44336;
     }
-  }
-
-  .overflow_hidden {
-    overflow: hidden;
   }
 
   button {

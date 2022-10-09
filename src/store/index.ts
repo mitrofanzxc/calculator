@@ -1,5 +1,5 @@
 import { store } from './store';
-import { useAppSelector, useAppDispatch, useBodyOverflow } from './hooks';
+import { useAppSelector, useAppDispatch } from './hooks';
 import {
   setInputValue,
   addToHistory,
@@ -19,7 +19,6 @@ export {
   store,
   useAppSelector,
   useAppDispatch,
-  useBodyOverflow,
   setInputValue,
   addToHistory,
   deleteInputValue,
