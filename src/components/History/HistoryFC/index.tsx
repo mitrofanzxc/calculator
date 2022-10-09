@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useAppSelector } from '../../../store/hooks';
+import { useAppSelector } from '../../../store';
 import { HistoryWrapper, HistoryTittle } from '../styled';
 
 const HistoryFC: FC = () => {

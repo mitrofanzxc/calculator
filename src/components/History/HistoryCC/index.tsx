@@ -1,11 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { ICalculatorState } from '../../../store/slices/calculatorSlice';
 import { HistoryWrapper, HistoryTittle } from '../styled';
-
-interface IHistoryCC {
-  calculator: ICalculatorState;
-}
+import { IHistoryCC } from './interface';
 
 class HistoryCC extends Component<IHistoryCC> {
   render() {

@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAppSelector, useAppDispatch } from '../../store/hooks';
-import { closeMobileMenu } from '../../store/slices/mobileMenuSlice';
+import { useAppSelector, useAppDispatch, closeMobileMenu } from '../../store';
 import { HeaderWrapper, HeaderLogoWrapper, HeaderLogo, NavWrapper } from './styled';
 import { ButtonBurgerFC } from '..';
 import { paths } from '../../constants';

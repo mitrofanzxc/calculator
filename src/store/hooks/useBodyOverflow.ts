@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useAppSelector } from '../store/hooks';
+import { useAppSelector } from '.';
 
 const useBodyOverflow = () => {
   const { isMobileMenuOpen } = useAppSelector(({ mobileMenu }) => mobileMenu);

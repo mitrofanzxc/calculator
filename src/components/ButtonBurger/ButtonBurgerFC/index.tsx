@@ -1,6 +1,5 @@
 import { FC } from 'react';
-import { useAppSelector, useAppDispatch } from '../../../store/hooks';
-import { toggleMobileMenu } from '../../../store/slices/mobileMenuSlice';
+import { useAppSelector, useAppDispatch, toggleMobileMenu } from '../../../store';
 import { Burger, BurgerBar, Shadow } from '../styled';
 
 const ButtonBurgerFC: FC = () => {

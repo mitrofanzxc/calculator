@@ -1,7 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import themeReducer from './slices/themeSlice';
-import calculatorReducer from './slices/calculatorSlice';
-import mobileMenuReducer from './slices/mobileMenuSlice';
+import { themeReducer, calculatorReducer, mobileMenuReducer } from '../slices';
 
 export const store = configureStore({
   reducer: {

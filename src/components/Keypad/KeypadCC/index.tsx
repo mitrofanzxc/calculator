@@ -1,22 +1,9 @@
 import { Component, MouseEvent } from 'react';
 import { connect } from 'react-redux';
-import {
-  setInputValue,
-  deleteInputValue,
-  equalInputValue,
-  addToHistory,
-  ICalculatorState,
-} from '../../../store/slices/calculatorSlice';
+import { setInputValue, deleteInputValue, equalInputValue, addToHistory } from '../../../store';
 import { calcTotalMiddleware } from '../../../utils';
 import { CalculatorButton, CalculatorButtonClean, CalculatorButtonEqual } from '../styled';
-
-interface IKeypadCC {
-  calculator: ICalculatorState;
-  setInputValue: any;
-  deleteInputValue: any;
-  addToHistory: any;
-  equalInputValue: any;
-}
+import { IKeypadCC } from './interface';
 
 class KeypadCC extends Component<IKeypadCC> {
   constructor(props: IKeypadCC) {

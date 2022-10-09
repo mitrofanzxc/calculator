@@ -1,6 +1,6 @@
 import { FC } from 'react';
+import { useAppSelector } from '../../../store';
 import { CalculatorForm, CalculatorInput } from '../styled';
-import { useAppSelector } from '../../../store/hooks';
 
 const DisplayFC: FC = () => {
   const { inputValue } = useAppSelector(({ calculator }) => calculator);

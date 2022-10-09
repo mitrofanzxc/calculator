@@ -1,11 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { CalculatorForm, CalculatorInput } from '../styled';
-import { ICalculatorState } from '../../../store/slices/calculatorSlice';
-
-interface IDisplayCC {
-  calculator: ICalculatorState;
-}
+import { IDisplayCC } from './interface';
 
 class DisplayCC extends Component<IDisplayCC> {
   render() {

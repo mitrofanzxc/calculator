@@ -1,11 +1,12 @@
 import { FC, useEffect, MouseEvent } from 'react';
-import { useAppSelector, useAppDispatch } from '../../../store/hooks';
 import {
+  useAppSelector,
+  useAppDispatch,
   setInputValue,
   deleteInputValue,
   equalInputValue,
   addToHistory,
-} from '../../../store/slices/calculatorSlice';
+} from '../../../store';
 import { calcTotalMiddleware } from '../../../utils';
 import { CalculatorButton, CalculatorButtonClean, CalculatorButtonEqual } from '../styled';
 

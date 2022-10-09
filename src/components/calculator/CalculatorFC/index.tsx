@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { CalculatorWrapper } from '../styled';
 import { DisplayFC, KeypadFC } from '../..';
+import { CalculatorWrapper } from '../styled';
 
 const CalculatorFC: FC = () => {
   return (

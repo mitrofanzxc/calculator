@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { CalculatorWrapper } from '../styled';
 import { DisplayCC, KeypadCC } from '../..';
+import { CalculatorWrapper } from '../styled';
 
 class CalculatorCC extends Component {
   render() {
