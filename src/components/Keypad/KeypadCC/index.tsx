@@ -37,7 +37,7 @@ class KeypadCC extends Component<IKeypadCC> {
   render() {
     return (
       <>
-        <CalculatorButton>AC</CalculatorButton>
+        <CalculatorButton>C</CalculatorButton>
         <CalculatorButton>%</CalculatorButton>
         <CalculatorButton>&plusmn;</CalculatorButton>
         <CalculatorButton onClick={this.handleDeleteInputValue}>&#8594;</CalculatorButton>

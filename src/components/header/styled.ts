@@ -6,6 +6,10 @@ const HeaderWrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
+
+  @media (max-width: 480px) {
+    padding: 10px 10px;
+  }
 `;
 
 const HeaderLogoWrapper = styled(Link)`

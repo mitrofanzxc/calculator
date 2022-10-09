@@ -35,7 +35,7 @@ const KeypadFC: FC = () => {
 
   return (
     <>
-      <CalculatorButton>AC</CalculatorButton>
+      <CalculatorButton>C</CalculatorButton>
       <CalculatorButton>%</CalculatorButton>
       <CalculatorButton>&plusmn;</CalculatorButton>
       <CalculatorButton onClick={handleDeleteInputValue}>&#8594;</CalculatorButton>
