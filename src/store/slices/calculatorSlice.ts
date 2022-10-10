@@ -46,6 +46,9 @@ export const calculatorSlice = createSlice({
     addToHistory: (state, action: PayloadAction<string>) => {
       state.history.push(action.payload);
     },
+    clearHistory: (state) => {
+      state.history = [];
+    },
   },
 });
 
@@ -56,5 +59,6 @@ export const {
   equalInputValue,
   resetAllCalculator,
   addToHistory,
+  clearHistory,
 } = calculatorSlice.actions;
 export default calculatorSlice.reducer;

@@ -1,6 +1,7 @@
 import calculatorReducer, {
   setInputValue,
   addToHistory,
+  clearHistory,
   deleteInputValue,
   equalInputValue,
   resetAllCalculator,
@@ -17,6 +18,7 @@ export {
   calculatorReducer,
   setInputValue,
   addToHistory,
+  clearHistory,
   deleteInputValue,
   equalInputValue,
   resetAllCalculator,

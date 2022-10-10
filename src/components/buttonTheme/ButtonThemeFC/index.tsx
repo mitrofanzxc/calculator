@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
 import { useAppSelector, useAppDispatch, switchTheme } from '../../../store';
-import { ButtonThemeWrapper } from '../styled';
+import { ButtonThemeWrapper, ButtonThemeLogo } from '../styled';
 import dark from '../../../assets/dark.svg';
 import light from '../../../assets/light.svg';
 
@@ -18,7 +18,8 @@ const ButtonThemeFC: FC = () => {
 
   return (
     <ButtonThemeWrapper onClick={switcher}>
-      <img src={isLightTheme ? light : dark} alt="theme-logo" />
+      <span>Switch Theme</span>
+      <ButtonThemeLogo src={isLightTheme ? light : dark} alt="theme-logo" />
     </ButtonThemeWrapper>
   );
 };

@@ -5,7 +5,7 @@ const HeaderWrapper = styled.header`
   position: sticky;
   top: 0;
   z-index: 2;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: ${({ theme }) => theme.bgColor};
   width: 100%;
   padding: 10px 20px;
   display: flex;

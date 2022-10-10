@@ -3,6 +3,7 @@ import { useAppSelector, useAppDispatch } from './hooks';
 import {
   setInputValue,
   addToHistory,
+  clearHistory,
   deleteInputValue,
   equalInputValue,
   resetAllCalculator,
@@ -21,6 +22,7 @@ export {
   useAppDispatch,
   setInputValue,
   addToHistory,
+  clearHistory,
   deleteInputValue,
   equalInputValue,
   resetAllCalculator,

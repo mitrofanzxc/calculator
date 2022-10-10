@@ -1,10 +1,21 @@
 import { FC } from 'react';
+import { useAppDispatch, clearHistory } from '../../../store';
+import { ButtonThemeFC } from '../../../components';
+import { SettingsWrapper, ButtonClearHistory } from '../styled';
 
 const SettingsFC: FC = () => {
+  const dispatch = useAppDispatch();
+
+  const handleHistory = () => {
+    localStorage.removeItem('history');
+    dispatch(clearHistory());
+  };
+
   return (
-    <section>
-      <h2>Settings FC</h2>
-    </section>
+    <SettingsWrapper>
+      <ButtonThemeFC />
+      <ButtonClearHistory onClick={handleHistory}>Clear History</ButtonClearHistory>
+    </SettingsWrapper>
   );
 };
 

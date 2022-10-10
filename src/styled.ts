@@ -30,6 +30,7 @@ const GlobalStyles = createGlobalStyle<IGlobalStyles>`
   }
 
   main {
+    margin-top: 20px;
     padding: 0 20px;
 
     @media (max-width: 480px) {
