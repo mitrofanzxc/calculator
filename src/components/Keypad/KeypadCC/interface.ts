@@ -6,4 +6,5 @@ export interface IKeypadCC {
   deleteInputValue: any;
   addToHistory: any;
   equalInputValue: any;
+  resetInputValue: any;
 }

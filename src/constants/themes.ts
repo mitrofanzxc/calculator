@@ -4,13 +4,13 @@ interface ITheme {
 }
 
 const lightTheme: ITheme = {
-  bgColor: '#FFFFFF',
-  color: '#000000',
+  bgColor: 'rgba(255, 255, 255, 1)',
+  color: 'rgba(33, 33, 33, 1)',
 };
 
 const darkTheme: ITheme = {
-  bgColor: '#000000',
-  color: '#FFFFFF',
+  bgColor: 'rgba(33, 33, 33, 1)',
+  color: 'rgba(255, 255, 255, 1)',
 };
 
 export { lightTheme, darkTheme };

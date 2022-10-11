@@ -57,6 +57,14 @@ const calcTotal = (inputValue: string[], index: number): number => {
           }
 
           break;
+        case '%':
+          previous = stack.pop();
+
+          if (previous) {
+            stack.push(previous % num);
+          }
+
+          break;
         default:
           break;
       }
@@ -84,8 +92,58 @@ const calcTotal = (inputValue: string[], index: number): number => {
 };
 
 const calcTotalMiddleware = (value: string) => {
-  value = value.replace(/\s/g, '');
-  return calcTotal(Array.from(value), 0);
+  const str = value.replace(/\s/g, '');
+
+  for (let i = 0; i < str.length; i += 1) {
+    if (value[i] === '.' && value[i + 1] === '.') {
+      throw new Error('too many dots in a row...');
+    } else if (str.includes('/0')) {
+      throw new Error(`can't divide by zero...`);
+    } else if (
+      str[str.length - 1] === '%' ||
+      str[str.length - 1] === '+' ||
+      str[str.length - 1] === '-' ||
+      str[str.length - 1] === '*' ||
+      str[str.length - 1] === '/'
+    ) {
+      throw new Error(`math sign cannot be in last place`);
+    } else if (
+      (value[i] === '%' ||
+        value[i] === '+' ||
+        value[i] === '-' ||
+        value[i] === '*' ||
+        value[i] === '/') &&
+      (value[i + 1] === '%' ||
+        value[i + 1] === '+' ||
+        value[i + 1] === '-' ||
+        value[i + 1] === '*' ||
+        value[i + 1] === '/') &&
+      (value[i + 2] === '%' ||
+        value[i + 2] === '+' ||
+        value[i + 2] === '-' ||
+        value[i + 2] === '*' ||
+        value[i + 2] === '/')
+    ) {
+      throw new Error(`too many math signs in a row...`);
+    }
+  }
+
+  for (let j = 0; j < str.length; j += 1) {
+    let leftParenthesis = 0;
+    let rightParenthesis = 0;
+
+    if (value[j] === '(') {
+      leftParenthesis += 1;
+    } else if (value[j] === ')') {
+      rightParenthesis += 1;
+    }
+
+    if (leftParenthesis !== rightParenthesis) {
+      throw new Error(`number of brackets does not match`);
+    }
+  }
+
+  return calcTotal(Array.from(str), 0);
 };
 
 export { calcTotal, calcTotalMiddleware };

@@ -6,6 +6,7 @@ import calculatorReducer, {
   equalInputValue,
   resetAllCalculator,
   resetInputValue,
+  setError,
 } from './calculatorSlice';
 import mobileMenuReducer, {
   openMobileMenu,
@@ -31,4 +32,5 @@ export {
   switchLightTheme,
   switchDarkTheme,
   switchTheme,
+  setError,
 };

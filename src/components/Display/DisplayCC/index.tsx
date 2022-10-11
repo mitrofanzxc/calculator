@@ -1,15 +1,16 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { CalculatorForm, CalculatorInput } from '../styled';
+import { CalculatorForm, CalculatorInput, ErrorInput } from '../styled';
 import { IDisplayCC } from './interface';
 
 class DisplayCC extends Component<IDisplayCC> {
   render() {
-    const { inputValue } = this.props.calculator;
+    const { inputValue, isError } = this.props.calculator;
 
     return (
       <CalculatorForm>
         <CalculatorInput type="text" value={inputValue} readOnly />
+        {isError && <ErrorInput type="text" value={isError.toString()} readOnly />}
       </CalculatorForm>
     );
   }

@@ -14,6 +14,7 @@ import {
   switchLightTheme,
   switchDarkTheme,
   switchTheme,
+  setError,
 } from './slices';
 
 export {
@@ -33,4 +34,5 @@ export {
   switchLightTheme,
   switchDarkTheme,
   switchTheme,
+  setError,
 };

@@ -17,3 +17,7 @@ root.render(
     </HashRouter>
   </StrictMode>,
 );
+
+if (window.Cypress) {
+  window.store = store;
+}

@@ -1,6 +1,12 @@
 import { Component, MouseEvent } from 'react';
 import { connect } from 'react-redux';
-import { setInputValue, deleteInputValue, equalInputValue, addToHistory } from '../../../store';
+import {
+  setInputValue,
+  deleteInputValue,
+  equalInputValue,
+  resetInputValue,
+  addToHistory,
+} from '../../../store';
 import { calcTotalMiddleware } from '../../../utils';
 import { CalculatorButton, CalculatorButtonClean, CalculatorButtonEqual } from '../styled';
 import { IKeypadCC } from './interface';
@@ -11,6 +17,7 @@ class KeypadCC extends Component<IKeypadCC> {
     this.handleSetInputValue = this.handleSetInputValue.bind(this);
     this.handleDeleteInputValue = this.handleDeleteInputValue.bind(this);
     this.handleEqualTotalValue = this.handleEqualTotalValue.bind(this);
+    this.handleClearInputValue = this.handleClearInputValue.bind(this);
   }
 
   componentDidUpdate(prevProps: IKeypadCC) {
@@ -34,10 +41,14 @@ class KeypadCC extends Component<IKeypadCC> {
     this.props.equalInputValue(calcTotalMiddleware(this.props.calculator.inputValue).toString());
   }
 
+  handleClearInputValue() {
+    this.props.resetInputValue();
+  }
+
   render() {
     return (
       <>
-        <CalculatorButton>C</CalculatorButton>
+        <CalculatorButton onClick={this.handleClearInputValue}>C</CalculatorButton>
         <CalculatorButton>%</CalculatorButton>
         <CalculatorButton>&plusmn;</CalculatorButton>
         <CalculatorButton onClick={this.handleDeleteInputValue}>&#8594;</CalculatorButton>
@@ -58,7 +69,7 @@ class KeypadCC extends Component<IKeypadCC> {
         <CalculatorButton onClick={this.handleSetInputValue}>2</CalculatorButton>
         <CalculatorButton onClick={this.handleSetInputValue}>3</CalculatorButton>
         <CalculatorButtonClean onClick={this.handleSetInputValue}>0</CalculatorButtonClean>
-        <CalculatorButton onClick={this.handleSetInputValue}>&sdot;</CalculatorButton>
+        <CalculatorButton onClick={this.handleSetInputValue}>.</CalculatorButton>
       </>
     );
   }
@@ -70,6 +81,12 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = { setInputValue, deleteInputValue, equalInputValue, addToHistory };
+const mapDispatchToProps = {
+  setInputValue,
+  deleteInputValue,
+  equalInputValue,
+  resetInputValue,
+  addToHistory,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(KeypadCC);

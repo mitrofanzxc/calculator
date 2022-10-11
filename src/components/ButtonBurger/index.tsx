@@ -17,7 +17,7 @@ const ButtonBurgerFC: FC = () => {
   return (
     <>
       <Shadow onClick={switcher} isMobileMenuOpen={isMobileMenuOpen} />
-      <Burger onClick={switcher}>
+      <Burger data-testid="burger" onClick={switcher}>
         <BurgerBar isMobileMenuOpen={isMobileMenuOpen} />
         <BurgerBar isMobileMenuOpen={isMobileMenuOpen} />
       </Burger>

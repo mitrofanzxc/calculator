@@ -5,7 +5,9 @@ import {
   setInputValue,
   deleteInputValue,
   equalInputValue,
+  resetInputValue,
   addToHistory,
+  setError,
 } from '../../../store';
 import { calcTotalMiddleware } from '../../../utils';
 import { CalculatorButton, CalculatorButtonClean, CalculatorButtonEqual } from '../styled';
@@ -25,8 +27,18 @@ const KeypadFC: FC = () => {
   };
 
   const handleEqualTotalValue = () => {
-    dispatch(addToHistory(inputValue));
-    dispatch(equalInputValue(calcTotalMiddleware(inputValue).toString()));
+    try {
+      dispatch(equalInputValue(calcTotalMiddleware(inputValue).toString()));
+      dispatch(addToHistory(inputValue));
+    } catch (error) {
+      if (error instanceof Error) {
+        dispatch(setError(error));
+      }
+    }
+  };
+
+  const handleClearInputValue = () => {
+    dispatch(resetInputValue());
   };
 
   useEffect(() => {
@@ -35,8 +47,8 @@ const KeypadFC: FC = () => {
 
   return (
     <>
-      <CalculatorButton>C</CalculatorButton>
-      <CalculatorButton>%</CalculatorButton>
+      <CalculatorButton onClick={handleClearInputValue}>C</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>%</CalculatorButton>
       <CalculatorButton>&plusmn;</CalculatorButton>
       <CalculatorButton onClick={handleDeleteInputValue}>&#8594;</CalculatorButton>
       <CalculatorButton onClick={handleSetInputValue}>+</CalculatorButton>
@@ -56,7 +68,7 @@ const KeypadFC: FC = () => {
       <CalculatorButton onClick={handleSetInputValue}>2</CalculatorButton>
       <CalculatorButton onClick={handleSetInputValue}>3</CalculatorButton>
       <CalculatorButtonClean onClick={handleSetInputValue}>0</CalculatorButtonClean>
-      <CalculatorButton onClick={handleSetInputValue}>&sdot;</CalculatorButton>
+      <CalculatorButton onClick={handleSetInputValue}>.</CalculatorButton>
     </>
   );
 };
