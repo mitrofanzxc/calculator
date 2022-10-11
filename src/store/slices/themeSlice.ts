@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
 import { getLocalStorage } from '../../utils';
 
 export interface IThemeState {
@@ -7,7 +6,7 @@ export interface IThemeState {
 }
 
 const initialState: IThemeState = {
-  isLightTheme: getLocalStorage('isLightTheme') ? getLocalStorage('isLightTheme') : true,
+  isLightTheme: getLocalStorage('isLightTheme') !== null ? getLocalStorage('isLightTheme') : true,
 };
 
 export const themeSlice = createSlice({
@@ -20,8 +19,8 @@ export const themeSlice = createSlice({
     switchDarkTheme: (state) => {
       state.isLightTheme = false;
     },
-    switchTheme: (state, action: PayloadAction<boolean>) => {
-      state.isLightTheme = action.payload;
+    switchTheme: (state) => {
+      state.isLightTheme = !state.isLightTheme;
     },
   },
 });

@@ -19,7 +19,7 @@ class ButtonThemeCC extends Component<IButtonThemeCC> {
   }
 
   switcher() {
-    this.props.switchTheme(!this.props.theme.isLightTheme);
+    this.props.switchTheme();
   }
 
   render() {

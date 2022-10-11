@@ -6,9 +6,8 @@ export interface IMobileMenuState {
 }
 
 const initialState: IMobileMenuState = {
-  isMobileMenuOpen: getLocalStorage('isMobileMenuOpen')
-    ? getLocalStorage('isMobileMenuOpen')
-    : false,
+  isMobileMenuOpen:
+    getLocalStorage('isMobileMenuOpen') !== null ? getLocalStorage('isMobileMenuOpen') : false,
 };
 
 export const mobileMenuSlice = createSlice({

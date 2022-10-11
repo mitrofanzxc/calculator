@@ -11,7 +11,7 @@ export interface ICalculatorState {
 const initialState: ICalculatorState = {
   inputValue: '0',
   isOperationFinish: false,
-  history: getLocalStorage('history') ? getLocalStorage('history') : [],
+  history: getLocalStorage('history') !== null ? getLocalStorage('history') : [],
 };
 
 export const calculatorSlice = createSlice({

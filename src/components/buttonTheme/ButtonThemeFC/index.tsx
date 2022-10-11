@@ -9,7 +9,7 @@ const ButtonThemeFC: FC = () => {
   const dispatch = useAppDispatch();
 
   const switcher = () => {
-    dispatch(switchTheme(!isLightTheme));
+    dispatch(switchTheme());
   };
 
   useEffect(() => {
