@@ -125,22 +125,34 @@ const calcTotalMiddleware = (value: string) => {
         value[i + 2] === '/')
     ) {
       throw new Error(`too many math signs in a row...`);
+    } else if (
+      !str.includes('1') &&
+      !str.includes('2') &&
+      !str.includes('3') &&
+      !str.includes('4') &&
+      !str.includes('5') &&
+      !str.includes('6') &&
+      !str.includes('7') &&
+      !str.includes('8') &&
+      !str.includes('9')
+    ) {
+      throw new Error(`it makes no sense...`);
     }
   }
 
-  for (let j = 0; j < str.length; j += 1) {
-    let leftParenthesis = 0;
-    let rightParenthesis = 0;
+  let leftParenthesis = 0;
+  let rightParenthesis = 0;
 
+  for (let j = 0; j < str.length; j += 1) {
     if (value[j] === '(') {
       leftParenthesis += 1;
     } else if (value[j] === ')') {
       rightParenthesis += 1;
     }
+  }
 
-    if (leftParenthesis !== rightParenthesis) {
-      throw new Error(`number of brackets does not match`);
-    }
+  if (leftParenthesis !== rightParenthesis) {
+    throw new Error(`number of brackets does not match`);
   }
 
   return calcTotal(Array.from(str), 0);
