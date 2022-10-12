@@ -35,6 +35,55 @@ describe('Calculator App', () => {
     cy.get('form input').should('have.value', '0');
   });
 
+  it('Should check the work of subtraction', () => {
+    cy.get('button').contains('C').click();
+    cy.get('form input').should('have.value', '0');
+
+    cy.get('button').contains('2').click();
+    cy.get('button').contains('-').click();
+    cy.get('button').contains('1').click();
+    cy.get('button').contains('=').click();
+
+    cy.get('form input').should('have.value', '1');
+  });
+
+  it('Should check the work of multiplication', () => {
+    cy.get('button').contains('C').click();
+    cy.get('form input').should('have.value', '0');
+
+    cy.get('button').contains('2').click();
+    cy.get('button').contains('*').click();
+    cy.get('button').contains('2').click();
+    cy.get('button').contains('=').click();
+
+    cy.get('form input').should('have.value', '4');
+  });
+
+  it('Should check the work of division', () => {
+    cy.get('button').contains('C').click();
+    cy.get('form input').should('have.value', '0');
+
+    cy.get('button').contains('9').click();
+    cy.get('button').contains('/').click();
+    cy.get('button').contains('3').click();
+    cy.get('button').contains('=').click();
+
+    cy.get('form input').should('have.value', '3');
+  });
+
+  it('Should check the remainder of the division', () => {
+    cy.get('button').contains('C').click();
+    cy.get('form input').should('have.value', '0');
+
+    cy.get('button').contains('3').click();
+    cy.get('button').contains('%').click();
+    cy.get('button').contains('2').click();
+    cy.get('button').contains('=').click();
+
+    cy.get('form input').should('have.value', '1');
+    cy.get('button').contains('C').click();
+  });
+
   it('Should clear history', () => {
     cy.contains('Settings (FC)').click();
     cy.contains('Clear History').click();
