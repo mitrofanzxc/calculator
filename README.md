@@ -1,6 +1,4 @@
-## Available Scripts
-
-To use the application, you need
+# Deploy: [Link](https://mitrofanzxc.github.io/calculator/)
 
 ### `npm i`
 
@@ -20,7 +18,7 @@ Start testing the app.
 
 ### `npm run deploy`
 
-Deploy the app to gh-pages.
+Deploy the app to `gh-pages`.
 
 ### `npm run build`
 
