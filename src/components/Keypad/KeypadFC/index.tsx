@@ -8,6 +8,7 @@ import {
   resetInputValue,
   addToHistory,
   setError,
+  changeSign,
 } from '../../../store';
 import { calcTotalMiddleware } from '../../../utils';
 import { CalculatorButton, CalculatorButtonClean, CalculatorButtonEqual } from '../styled';
@@ -42,6 +43,10 @@ const KeypadFC: FC = () => {
     dispatch(resetInputValue());
   };
 
+  const handleChangeSign = () => {
+    dispatch(changeSign());
+  };
+
   useEffect(() => {
     localStorage.setItem('history', JSON.stringify(history));
   }, [history]);
@@ -50,7 +55,7 @@ const KeypadFC: FC = () => {
     <>
       <CalculatorButton onClick={handleClearInputValue}>C</CalculatorButton>
       <CalculatorButton onClick={handleSetInputValue}>%</CalculatorButton>
-      <CalculatorButton>&plusmn;</CalculatorButton>
+      <CalculatorButton onClick={handleChangeSign}>&plusmn;</CalculatorButton>
       <CalculatorButton onClick={handleDeleteInputValue}>&#8594;</CalculatorButton>
       <CalculatorButton onClick={handleSetInputValue}>+</CalculatorButton>
       <CalculatorButton onClick={handleSetInputValue}>-</CalculatorButton>

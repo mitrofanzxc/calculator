@@ -55,6 +55,16 @@ export const calculatorSlice = createSlice({
     setError: (state, action: PayloadAction<Error | null>) => {
       state.isError = action.payload;
     },
+    changeSign: (state) => {
+      if (state.inputValue[0] === '-') {
+        // console.log(state.inputValue.split('').slice(1).join(''));
+        state.inputValue = state.inputValue.split('').slice(1).join('');
+      } else if (state.inputValue[0] !== '-') {
+        const array = state.inputValue.split('');
+        array.unshift('-');
+        state.inputValue = array.join('');
+      }
+    },
   },
 });
 
@@ -67,5 +77,6 @@ export const {
   addToHistory,
   clearHistory,
   setError,
+  changeSign,
 } = calculatorSlice.actions;
 export default calculatorSlice.reducer;
