@@ -18,6 +18,7 @@ class KeypadCC extends Component<IKeypadCC> {
     this.handleDeleteInputValue = this.handleDeleteInputValue.bind(this);
     this.handleEqualTotalValue = this.handleEqualTotalValue.bind(this);
     this.handleClearInputValue = this.handleClearInputValue.bind(this);
+    this.handleChangeSign = this.handleChangeSign.bind(this);
   }
 
   componentDidUpdate(prevProps: IKeypadCC) {
@@ -45,12 +46,16 @@ class KeypadCC extends Component<IKeypadCC> {
     this.props.resetInputValue();
   }
 
+  handleChangeSign() {
+    this.props.changeSign();
+  }
+
   render() {
     return (
       <>
         <CalculatorButton onClick={this.handleClearInputValue}>C</CalculatorButton>
-        <CalculatorButton>%</CalculatorButton>
-        <CalculatorButton>&plusmn;</CalculatorButton>
+        <CalculatorButton onClick={this.handleSetInputValue}>%</CalculatorButton>
+        <CalculatorButton onClick={this.handleChangeSign}>&plusmn;</CalculatorButton>
         <CalculatorButton onClick={this.handleDeleteInputValue}>&#8594;</CalculatorButton>
         <CalculatorButton onClick={this.handleSetInputValue}>+</CalculatorButton>
         <CalculatorButton onClick={this.handleSetInputValue}>-</CalculatorButton>

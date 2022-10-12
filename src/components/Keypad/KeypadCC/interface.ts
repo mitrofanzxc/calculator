@@ -7,4 +7,5 @@ export interface IKeypadCC {
   addToHistory: any;
   equalInputValue: any;
   resetInputValue: any;
+  changeSign: any;
 }
