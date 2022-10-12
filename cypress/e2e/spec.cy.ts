@@ -53,6 +53,7 @@ describe('Calculator App', () => {
           inputValue: '0',
           isOperationFinish: false,
           history: Array(0),
+          isError: null,
         },
         mobileMenu: {
           isMobileMenuOpen: false,
@@ -72,6 +73,7 @@ describe('Calculator App', () => {
           inputValue: '0',
           isOperationFinish: false,
           history: Array(0),
+          isError: null,
         },
         mobileMenu: {
           isMobileMenuOpen: false,
@@ -91,6 +93,7 @@ describe('Calculator App', () => {
           inputValue: '0',
           isOperationFinish: false,
           history: Array(0),
+          isError: null,
         },
         mobileMenu: {
           isMobileMenuOpen: false,
@@ -112,6 +115,7 @@ describe('Calculator App', () => {
           inputValue: '0',
           isOperationFinish: false,
           history: Array(0),
+          isError: null,
         },
         mobileMenu: {
           isMobileMenuOpen: false,
@@ -131,6 +135,7 @@ describe('Calculator App', () => {
           inputValue: '0',
           isOperationFinish: false,
           history: Array(0),
+          isError: null,
         },
         mobileMenu: {
           isMobileMenuOpen: true,
@@ -150,6 +155,7 @@ describe('Calculator App', () => {
           inputValue: '0',
           isOperationFinish: false,
           history: Array(0),
+          isError: null,
         },
         mobileMenu: {
           isMobileMenuOpen: false,

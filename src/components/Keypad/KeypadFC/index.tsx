@@ -30,6 +30,7 @@ const KeypadFC: FC = () => {
     try {
       dispatch(equalInputValue(calcTotalMiddleware(inputValue).toString()));
       dispatch(addToHistory(inputValue));
+      dispatch(setError(null));
     } catch (error) {
       if (error instanceof Error) {
         dispatch(setError(error));
