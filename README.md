@@ -8,7 +8,7 @@ Install all dependencies.
 
 ### `npm run start`
 
-Runs the app in the development mode.
+Run the app in the development mode.
 
 ### `npm run watch`
 
@@ -16,7 +16,11 @@ Keep track of all changes.
 
 ### `npm run cypress:open`
 
-Start testing the application.
+Start testing the app.
+
+### `npm run deploy`
+
+Deploy the app to gh-pages.
 
 ### `npm run build`
 
