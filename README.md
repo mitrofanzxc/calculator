@@ -1,3 +1,27 @@
+## Available Scripts
+
+To use the application, you need
+
+### `npm i`
+
+Install all dependencies.
+
+### `npm run start`
+
+Runs the app in the development mode.
+
+### `npm run watch`
+
+Keep track of all changes.
+
+### `npm run cypress:open`
+
+Start testing the application.
+
+### `npm run build`
+
+Builds the app for production to the `dist` folder.
+
 # Tестовое задание калькулятор
 
 ## Содержание
