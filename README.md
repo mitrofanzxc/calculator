@@ -18,40 +18,40 @@ Start testing the app.
 
 ## Requirements of the project:
 
-- [x] Необходимо реализовать приложение калькулятор. Приложение должно предоставлять основные арифметические операции, построитель выражений и полную историю всех выражений.
-- [x] Обязательная компонентная модель:
-  - Header - должен отображать заголовок приложения, а также ссылки на другие страницы.
-  - Calculator - корневой элемент для менеджмента данных калькулятора (логика для хранения истории, операций, текущего состояния и т.д.).
-  - Display - отображает ввод калькулятора, выражения и историю.
-  - History - отображает список ранее выполненных операций.
-  - ControlPanel - используется для управления взаимодействиями калькулятора, которые не связаны с расчетными операциями. Например, он предоставляет функционал для открытия/скрытия истории.
-  - Keypad - используется для ввода операндов, а также выполнения различных операций с этими операндами..
-- [x] Необходимый функционал:
-  - Сложение
-  - Вычитание
-  - Умножение
-  - Деление
-  - Переключение знака
-  - Построитель выражения
-  - История операций
-  - Показывать полную историю
-  - Очистка истории
-  - Очистка вычисленного значения и выражения
-  - Очистка всего (истории, вычисленного значения и выражения)
-  - Точность расчета - 3 символа.
-- [x] Дополнительный функционал:
-  - Действительные числа могут быть записаны как 0.5 и .5
-  - Операция % - остаток от деления
-- [x] Для реализации логики приложения, необходимо использовать поведенческий паттерн программирования "Команда", который позволяет превращает запросы в объекты, позволяя передавать их как аргументы при вызове методов, ставить запросы в очередь, логировать их, а также поддерживать отмену операций (см. подробнее паттерн Команда).
-- [x] Реализация с использованием как классовых, так и функциональных react компонентов и использованием хуков. Разделите весь функционал приложения на две страницы, на одной из которых будет представлена реализация через классовые компоненты, а на второй - через функциональные. Например, в компоненте header должны быть представлены ссылки на следующие страницы: home(FC) и home(CC).
-- [x] Обработка ошибок через паттерн "Error Boundaries"
-- [x] Реализация светлой и тёмной темы с использованием styled-components
-- [x] Проверка типов в React компонентах, передаваемых параметров и подобных объектов.
-- [x] Использование алиасов для импортирования файлов.
-- [x] Реализовать e2e тестирование c полным покрытием функционала приложения:
-  - Арифметические операции.
-  - Модуль истории.
-  - Модуль дисплея.
-  - Модуль клавиатуры.
-  - Модуль навигации.
-  - Модуль смены темы и т.д.
+- [x] Need to implement a calculator application. The application must provide basic arithmetic operations, an expression builder, and a complete history of all expressions;
+- [x] Mandatory Component Model:
+  - Header - should display the application title as well as links to other pages;
+  - Calculator - root element for calculator data management (logic for storing history, operations, current state, etc.);
+  - Display - displays calculator input, expressions and history;
+  - History - displays a list of previously performed operations;
+  - ControlPanel - used to manage calculator interactions that are not related to settlement transactions. For example, it provides functionality to open/hide history;
+  - Keypad - used to enter operands, as well as perform various operations on these operands;
+- [x] Required functionality:
+  - Addition;
+  - Subtraction;
+  - Multiplication;
+  - Division;
+  - Switch sign;
+  - Expression builder;
+  - Operations history;
+  - Show full history;
+  - Clearing history;
+  - Clearing a Computed Value and an Expression;
+  - Clearing everything (history, computed value and expression);
+  - Calculation accuracy - 3 symbols;
+- [x] Additional functionality:
+  - Real numbers can be written as 0.5 and .5;
+  - Operation % - remainder of division;
+- [x] To implement the application logic, it is necessary to use the "Command" behavioral programming pattern, which allows you to turn requests into objects, allowing you to pass them as arguments when calling methods, queue requests, log them, and also support the cancellation of operations (see the Command pattern for more details);
+- [x] Implementation using both class and functional react components and using hooks. Divide all the functionality of the application into two pages, on one of which the implementation will be presented through class components, and on the second - through functional ones. For example, the header component should contain links to the following pages: home(FC) and home(CC);
+- [x] Handling Errors with the "Error Boundaries" Pattern;
+- [x] Light and dark theme implementation using styled-components;
+- [x] Type checking in React components, passing parameters and similar objects;
+- [x] Using aliases to import files;
+- [x] Implement e2e testing with full coverage of application functionality:
+  - Arithmetic operations;
+  - History module;
+  - Display module;
+  - Keyboard module;
+  - Navigation module;
+  - Theme module.
